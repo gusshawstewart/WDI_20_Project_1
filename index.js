@@ -8,19 +8,37 @@ function init(){
   
   var player1Health = 100;
   var player2Health = 100;
-  var time = (player2Health * 30);
+  var time = 500;
+  var counter = 1;
+  var turn = true;
 
-   
-   /*$( "#slider" ).slider({
-      value:0,
-      min: 0,
-      max: 200,
-      step: 5,
-      slide: function( event, ui ) {
-          $( "#power" ).val( ui.value );
-          
-      }
-  });*/
+
+
+function runMyGame(){
+  
+  $(window).on('keydown', function(e){
+    switch(e.which){
+          case 65 : player2Attack();
+          break;
+          case 76 : player1Attack();
+          break;
+          default : console.log('Broken Switch');
+          break;
+    }
+  });
+
+
+
+
+  // if (turn === true) {
+  //   player2Attack();
+  // } else {
+  //   player1Attack();
+  // }
+  }
+
+//slider working! 
+
 
   slideUp();
 
@@ -31,6 +49,7 @@ function init(){
 
  }
 
+
  function slideDown() {
 
     $( "#slide" ).animate({ value: -125 }, time , slideUp);
@@ -38,172 +57,149 @@ function init(){
  }
 
 
- $(window).keydown(function(e){
+    // if ($("#counter") % 2 === 0)  { player2Attack()};
 
-    $("#slide").stop(true);
+    //   else  ($("#counter") % 2 === 1) { player2Attack()};
+
+
+// player 2 attack 
+
+ 
+
+
+function player2Attack() {
+
+ // $(window).keydown(function(e){
+
+  if (turn === true){
+
+  var power = $("#slide").val();
+    // $("#slide").stop(true);
 
     console.log($("#slide").val());
 
- });
+      //make negative power positive.
+      if (power < 0){
+
+        power = -power; 
+      };
+
+      //dictate how powerful a hit is. 
+      if (power <10 ){
+       power = 10;
+     }
+
+     else if (power < 50){
+      power = 5;
+    } 
+
+    else {
+      power = 2;
+    }
+
+    player1Health = player1Health - power;
+    counter = counter + 1;
+    console.log(counter);
+
+    console.log(player1Health);
+
+    $("#player1Health").html(player1Health);
+
+    // $("#counter").html(counter);
+    turn = false;
+    // console.log(turn);
+
+    // runMyGame();
+
+  // });
+}
+else {
+  console.log("NOT PLAYER 2 TURN");
+}
+
+
+}
+
+
+
+// // player 1 attack  $(window).keydown(function(e){
+
+
+  function player1Attack() {
+    // $(window).keydown(function(e){
+
+      if (turn === false){
+
+      // var counter = counter + 1;
+      // console.log(counter);
+      
+      var power = $("#slide").val();
+    // $("#slide").stop(true);
+
+    console.log($("#slide").val());
+
+      //make negative power positive.
+      if (power < 0){
+        power = -power; 
+      };
+
+      //dictate how powerful a hit is. 
+      if (power <10 ){
+       power = 10;
+     }
+
+     else if (power < 50){
+      power = 5;
+    } 
+
+    else {
+      power = 2;
+    }
+
+    player2Health = player2Health - power;
+
+    turn = !turn;
+
+    console.log(player2Health);
+    counter = counter + 1;
+    console.log(counter);
+
+    $("#player2Health").html(player2Health);
+
+    // $("#counter").html(counter);
+    turn = true;
+    // console.log(turn);
+    
+    // runMyGame();
+
+  // });
+} else {
+  console.log("NOT PLAYER 1 TURN!")
+}
+
+  }
+
+
+
+
 
  $("#player1Health").html(player1Health)
+ $("#player2Health").html(player2Health)
+ // $("#counter").html(counter)
 
   
 
+ runMyGame();
 
-///////////// player2power and result of attack. 
 
-$("#slider").click(function(){
+// $(document).on('keydown', function(e){
+//   console.log(e.which);
+// })
+// A     L
+// 65 / 76
 
-       // var powerBar = $("#player2Power");
-      var player2Power =  $( "#slider" ).slider( "value" );
-       
 
-      player1Health = player1Health- player2Power;
-
-       console.log(player1Health);
-
-      $("#player1Health").html(player1Health);
-      
-     
-});
-
-
-// $("#slide").css("value");
-
-
- 
-
-
-
-
-
-  
-   
-
-
-
-   
-
-   // $( "#power" ).val($( "#slider" ).slider( "value" ) );
-  
-   
-  
-
- 
-
-
-
- // var slideVal = $('#slide').slider("option", "value");
-
- // console.log(slideVal)
-
-
-
-
-
- // 
-
-
-
-
-// $(function(){
-
-//   $( "#days" ).val($( "#slider" ).slider( "value" ) )
-
-
-
-// });
-
-
-// create a moving power bar that dictates the player2Power value.
-
-
-// function timedBar() {
-
-//   var powerBar = $("#player2Power");
-//       powerBar.animate({left: '400px'}, time);
-
-// }
-
-
-
-// var time = (player2Health * 300); 
-
-                            
-                         
-
-
-                          //    function showValue(newValue)
-                          //    {
-                          // document.getElementById("#range").innerHTML=newValue;
-                          //    };
-
-                          //    console.log(showValue)
-
-                             // $("#slide").change(function() {
-                             //    updateSlider(this.value);
-                             //  })
-
-                             // function updateSlider(slideAmount) 
-                             //      {
-                             //        var display = document.getElementById("chosen");
-                             //        //show the amount
-                             //        console.log(slideAmount);
-
-                             
-
-
-
-
-
-
-
-
-
-
-
-
-                                    }
-
-
-
-
-
-
-// ////////////////////////set interval 
-// function getPower() {
-//   var power = 1;
-
-//   setInterval(function() {
-//     power + 10;
-//   }, 1000)
-
-
-// var myVar = setInterval
-//   clearInterval();
-// }
-
-
-
-
-// setTimeout(function() {
-//   console.log("hello");
-// }, 1000);
-
-
-
-
-
-// setInterval(function(){ alert("You missed!");
-// player2power = 0;
-//  }, time);
-
-
-
-
-
-
-
+// END OF THE PROGRAM
+ }
 
 

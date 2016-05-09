@@ -11,13 +11,42 @@ function init(){
   var time = (player2Health * 30);
 
    
-  
-  
+   /*$( "#slider" ).slider({
+      value:0,
+      min: 0,
+      max: 200,
+      step: 5,
+      slide: function( event, ui ) {
+          $( "#power" ).val( ui.value );
+          
+      }
+  });*/
+
+  slideUp();
 
 
+ function slideUp() {
+
+    $( "#slide" ).animate({ value: 125 }, time , slideDown);
+
+ }
+
+ function slideDown() {
+
+    $( "#slide" ).animate({ value: -125 }, time , slideUp);
+
+ }
 
 
-  $("#player1Health").html(player1Health)
+ $(window).keydown(function(e){
+
+    $("#slide").stop(true);
+
+    console.log($("#slide").val());
+
+ });
+
+ $("#player1Health").html(player1Health)
 
   
 
@@ -45,19 +74,6 @@ $("#slider").click(function(){
 
  
 
- $( "#slider" ).slider({
-    value:0,
-    min: 0,
-    max: 200,
-    step: 5,
-    slide: function( event, ui ) {
-        $( "#power" ).val( ui.value );
-        
-    }
-});
-
- $( "#slider" ).animate({ 
-      value: 200 }, time);
 
 
 

@@ -3,6 +3,8 @@ $(init);
 function init(){
 
 
+
+
 //////////////////initial healther
 
   
@@ -14,8 +16,18 @@ function init(){
 
 
 
+
+  $("#start").on('click', function(e){
+    
+    runMyGame();
+    
+});
+
+
+
+
 function runMyGame(){
-  
+  slideUp();
   $(window).on('keydown', function(e){
     switch(e.which){
           case 65 : player2Attack();
@@ -25,6 +37,8 @@ function runMyGame(){
           default : console.log('Broken Switch');
           break;
     }
+      knockOut();
+
   });
 
 
@@ -40,7 +54,18 @@ function runMyGame(){
 //slider working! 
 
 
-  slideUp();
+  function knockOut() {
+
+    if (parseInt($("#player1Health").html()) <= 0 ){
+      console.log("player 2 wins")
+      $(window).off('keydown');
+    }
+    else if (parseInt($("#player2Health").html()) <= 0) {
+      console.log("player 1 wins");
+      $(window).off('keydown');
+    }
+
+  }
 
 
  function slideUp() {
@@ -189,7 +214,7 @@ else {
 
   
 
- runMyGame();
+ // runMyGame();
 
 
 // $(document).on('keydown', function(e){

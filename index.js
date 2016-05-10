@@ -2,6 +2,17 @@ $(init);
 
 function init(){
 
+  $('#boxer1Punch').hide();
+  $('#boxer1Victory').hide();
+  $('#boxer1Hit').hide();
+  $('#boxer1Loss').hide();
+
+  $('#boxer2Punch').hide();
+  $('#boxer2Victory').hide();
+  $('#boxer2Hit').hide();
+  $('#boxer2Loss').hide();
+
+
 
 
 
@@ -20,10 +31,36 @@ function init(){
   $("#start").on('click', function(e){
     
     runMyGame();
-    
+
 });
 
+  $('#boxer2Idle').sprite({fps: 2, no_of_frames: 4});
 
+  $('#boxer2Punch').sprite({fps: 2, no_of_frames: 2});
+
+  $('#boxer2Victory').sprite({fps: 2, no_of_frames: 2});
+
+  $('#boxer2Hit').sprite({fps: 2, no_of_frames: 2});
+
+  $('#boxer2Loss').sprite({fps: 2, no_of_frames: 2});
+
+
+
+// boxer 1 actions
+  $('#boxer1Idle').sprite({fps: 2, no_of_frames: 4});
+
+  $('#boxer1Punch').sprite({fps: 2, no_of_frames: 3});
+
+  $('#boxer1Victory').sprite({fps: 2, no_of_frames: 2});
+
+  $('#boxer1Hit').sprite({fps: 2, no_of_frames: 4});
+
+  $('#boxer1Loss').sprite({fps: 2, no_of_frames: 2});
+
+
+// boxer 2 actions
+
+  
 
 
 function runMyGame(){
@@ -59,10 +96,40 @@ function runMyGame(){
     if (parseInt($("#player1Health").html()) <= 0 ){
       console.log("player 2 wins")
       $(window).off('keydown');
+        $('#boxer2Idle').hide();
+        $("#boxer2Victory").show();
+        $("#boxer1Idle").hide();
+        $("#boxer1Loss").show();
+
+        $("#boxer1Punch").hide();
+        $("#boxer1Victory").hide();
+        $("#boxer1Hit").hide();
+
+        $("#boxer2Hit").hide();
+        $("#boxer2Loss").hide();
+        $("#boxer2Punch").hide();
+
+
+
+
     }
     else if (parseInt($("#player2Health").html()) <= 0) {
       console.log("player 1 wins");
       $(window).off('keydown');
+      $('#boxer1Idle').hide();
+      $("#boxer1Victory").show();
+      $("#boxer2Idle").hide();
+      $("#boxer2Loss").show();
+
+      $("#boxer2Punch").hide();
+      $("#boxer2Victory").hide();
+      $("#boxer2Hit").hide();
+
+      $("#boxer1Hit").hide();
+      $("#boxer1Loss").hide();
+      $("#boxer1Punch").hide();
+
+
     }
 
   }
@@ -97,6 +164,17 @@ function player2Attack() {
  // $(window).keydown(function(e){
 
   if (turn === true){
+
+    $('#boxer1Idle').hide();
+    $('#boxer1Punch').show();
+
+
+    setTimeout(function() {
+      $('#boxer1Punch').hide();
+      $('#boxer1Idle').show();
+    }, 1000);
+
+
 
   var power = $("#slide").val();
     // $("#slide").stop(true);
@@ -154,6 +232,14 @@ else {
     // $(window).keydown(function(e){
 
       if (turn === false){
+
+        $('#boxer2Idle').hide();
+        $('#boxer2Punch').show();
+
+        setTimeout(function() {
+          $('#boxer2Punch').hide();
+          $('#boxer2Idle').show();
+        }, 1000);
 
       // var counter = counter + 1;
       // console.log(counter);

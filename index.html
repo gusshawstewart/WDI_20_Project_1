@@ -1,52 +1,64 @@
 <!DOCTYPE html>
 <html>
 <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
-  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-  <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<link rel= "stylesheet" href= "style.css">
+
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<script src= "https://cdnjs.cloudflare.com/ajax/libs/jquery.spritely/0.6.8/jquery.spritely.min.js"></script>
 <script src ="index.js"></script>
-  <title></title>
+
+<title></title>
 </head>
 <body>
 
 
-<h1> Boxing</h1> 
+  <h1> Boxing</h1> 
 
-<div class= "game">
-<div class="health">
-  
-<p id="player1Health">[score]</p>
-<p id="player2Health"> [player2score] </p>
-
-</div>
-
-<!-- <div class = "power">
-  
-<button id="player2Power" style="background:#98bf21;height:100px;width:200px;position:absolute;">[number}</p>
-
-</div> -->
-
-<div id="slider">
-    <input id="slide" type="range"  min="-100" max="100" step="5" value="0" disabled />
-</div>  
+  <div class="game">
+    <div class="health">
+      <p id="player1Health">[score]</p>
+      <p id="player2Health"> [player2score] </p>
+    </div>
 
 
+    <div id="slider">
+      <input id="slide" type="range"  min="-100" max="100" step="5" value="0" disabled />
+    </div>
+
+    <!-- Boxer One -->
+    <div class="boxer-one-container">
+      <div class="boxer" id="boxer1Idle"></div>
+      <div class="boxer" id="boxer1Punch"></div>
+      <div class="boxer" id="boxer1Victory"></div>
+
+      <div class="boxer" id="boxer1Hit"></div>
+      <div class="boxer" id="boxer1Loss"></div>
+    </div>
+
+    <!-- Boxer Two -->
+    <div class="boxer-two-container">
+      <div class="boxer" id="boxer2Idle"></div>
+      <div class="boxer" id="boxer2Punch"></div>
+      <div class="boxer" id="boxer2Victory"></div>
+
+      <div class="boxer" id="boxer2Hit"></div>
+      <div class="boxer" id="boxer2Loss"></div>
+    </div>
+  </div>
 
 
 
-<div id="label">Slider!</div>
-<!--<div id="slider"></div>-->
-<p id="counter" /> </p>
 
 
-</div>
+  <div id="boxer"></div>
+  <div id="boxer"></div>
 
-</div>
+  <div class= "welcome">
+    <p> Let's get ready to rumble!!! Player 1 press A to punch. Player 2 press L to punch. </p>
+    <button id = "start"> start </button>
 
-<div class= "welcome">
-<p> Let's get ready to rumble!!! Player 1 press A to punch. Player 2 press L to punch. </p>
-<button id = "start"> start </button>
-
-</div>
+  </div>
 
 
 </body>

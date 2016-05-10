@@ -1,0 +1,118 @@
+.boxer-one-container, .boxer-two-container {
+  width: 77px;
+  height: 79px;
+  margin: -4px;
+  display: inline-block; 
+}
+
+.boxer {
+  position: absolute;
+}
+
+
+#boxer {
+
+width:76px;
+height: 78px;
+background-image: url("attempt.png");
+background-position: 78px 78px;
+
+
+}
+
+#boxer1Idle {
+  width:76px;
+  height: 78px;
+  background-image: url("attempt.png");
+  background-position: 0px 0px;
+
+}
+
+
+#boxer1Punch {
+  width:76px;
+  height: 72px;
+  background-image: url("attempt.png");
+  background-position: 0px -77px;
+
+}
+
+
+#boxer1Hit {
+  width:76px;
+  height: 78px;
+  background-image: url("attempt.png");
+  background-position: 0px -152px;
+
+}
+
+
+
+#boxer1Victory {
+  width:76px;
+  height: 78px;
+  background-image: url("attempt.png");
+  background-position: 0px -234px;
+
+}
+
+
+
+
+
+
+#boxer1Loss {
+  width:76px;
+  height: 78px;
+  background-image: url("attempt.png");
+  background-position: 0px -312px;
+
+}
+
+
+
+#boxer2Idle {
+  width:76px;
+  height: 78px;
+  background-image: url("attempt.png");
+  background-position: 0px -382px;
+
+}
+
+#boxer2Punch {
+  width:76px;
+  height: 71px;
+  background-image: url("attempt.png");
+  background-position: 0px -462px;
+
+}
+
+#boxer2Hit {
+  width:76px;
+  height: 73px;
+  background-image: url("attempt.png");
+  background-position: 0px -535px;
+
+}
+
+
+
+
+
+#boxer2Victory {
+  width:76px;
+  height: 80px;
+  background-image: url("attempt.png");
+  background-position: 0px -610px;
+
+}
+
+#boxer2Loss {
+  width:76px;
+  height: 78px;
+  background-image: url("attempt.png");
+  background-position: 0px -702px;
+
+}
+
+  

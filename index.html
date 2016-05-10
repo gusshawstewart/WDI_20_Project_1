@@ -14,6 +14,10 @@
 
 
   <h1> Boxing</h1> 
+  <div id="slider">
+    <input id="slide" type="range"  min="-100" max="100" step="5" value="0" disabled />
+  </div>
+
 
   <div class="game">
     <div class="health">
@@ -22,28 +26,26 @@
     </div>
 
 
-    <div id="slider">
-      <input id="slide" type="range"  min="-100" max="100" step="5" value="0" disabled />
-    </div>
+    <div class="fighters">
+      <!-- Boxer One -->
+      <div class="boxer-one-container">
+        <div class="boxer" id="boxer1Idle"></div>
+        <div class="boxer" id="boxer1Punch"></div>
+        <div class="boxer" id="boxer1Victory"></div>
 
-    <!-- Boxer One -->
-    <div class="boxer-one-container">
-      <div class="boxer" id="boxer1Idle"></div>
-      <div class="boxer" id="boxer1Punch"></div>
-      <div class="boxer" id="boxer1Victory"></div>
+        <div class="boxer" id="boxer1Hit"></div>
+        <div class="boxer" id="boxer1Loss"></div>
+      </div>
 
-      <div class="boxer" id="boxer1Hit"></div>
-      <div class="boxer" id="boxer1Loss"></div>
-    </div>
+      <!-- Boxer Two -->
+      <div class="boxer-two-container">
+        <div class="boxer" id="boxer2Idle"></div>
+        <div class="boxer" id="boxer2Punch"></div>
+        <div class="boxer" id="boxer2Victory"></div>
 
-    <!-- Boxer Two -->
-    <div class="boxer-two-container">
-      <div class="boxer" id="boxer2Idle"></div>
-      <div class="boxer" id="boxer2Punch"></div>
-      <div class="boxer" id="boxer2Victory"></div>
-
-      <div class="boxer" id="boxer2Hit"></div>
-      <div class="boxer" id="boxer2Loss"></div>
+        <div class="boxer" id="boxer2Hit"></div>
+        <div class="boxer" id="boxer2Loss"></div>
+      </div>
     </div>
   </div>
 

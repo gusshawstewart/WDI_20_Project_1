@@ -29,6 +29,7 @@ function init(){
 
 
   $("#start").on('click', function(e){
+
     
     runMyGame();
 
@@ -96,7 +97,7 @@ function runMyGame(){
     if (parseInt($("#player1Health").html()) <= 0 ){
       console.log("player 2 wins")
       $(window).off('keydown');
-        $('#boxer2Idle').hide();
+        $("#boxer2Idle").hide();
         $("#boxer2Victory").show();
         $("#boxer1Idle").hide();
         $("#boxer1Loss").show();
@@ -127,7 +128,7 @@ function runMyGame(){
 
       $("#boxer1Hit").hide();
       $("#boxer1Loss").hide();
-      $("#boxer1Punch").hide();
+      $("#boxer2Punch").hide();
 
 
     }
@@ -173,6 +174,8 @@ function player2Attack() {
       $('#boxer1Punch').hide();
       $('#boxer1Idle').show();
     }, 1000);
+
+
 
 
 
